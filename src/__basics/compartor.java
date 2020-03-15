@@ -11,7 +11,7 @@ public class compartor {
 		Queue<Integer> q = new PriorityQueue<Integer>(new Comparator<Integer>() {
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				return o1 - o2; // o1排在o2的前面，升序比较数字
+				return o1 - o2;
 			}
 		});
 
@@ -19,8 +19,8 @@ public class compartor {
 
 			@Override
 			public int compare(String o1, String o2) {
-				// return o1.compareTo(o2); // o1排在o2的前面，字符串
-				return o2.compareTo(o1); // 相反
+				// return o1.compareTo(o2); 
+				return o2.compareTo(o1); 
 			}
 		});
 

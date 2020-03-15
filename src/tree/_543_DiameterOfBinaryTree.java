@@ -8,6 +8,7 @@ class TreeNode {
 	TreeNode(int x) {
 		val = x;
 	}
+
 }
 
 public class _543_DiameterOfBinaryTree {
