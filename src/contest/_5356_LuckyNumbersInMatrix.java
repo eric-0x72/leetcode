@@ -10,16 +10,15 @@ import java.util.List;
 public class _5356_LuckyNumbersInMatrix {
 
 	public List<Integer> luckyNumbers(int[][] matrix) {
-
 		int rows = matrix.length;
 		int cols = matrix[0].length;
-
-		int minrow = Integer.MAX_VALUE;
-		int minrowcol = 0;
 
 		List<Integer> res = new ArrayList<>();
 
 		for (int i = 0; i < rows; i++) {
+			int minrow = Integer.MAX_VALUE;
+			int minrowcol = 0;
+
 			for (int j = 0; j < cols; j++) {
 				int cur = matrix[i][j];
 
