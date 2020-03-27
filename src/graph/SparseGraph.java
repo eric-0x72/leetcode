@@ -4,6 +4,8 @@ import java.util.Vector;
 
 public class SparseGraph {
 
+	private int somevariable;
+
 	private int vertex;
 	private int edge;
 
