@@ -1,5 +1,16 @@
 package __basics;
 
+/**
+ * @author weibang
+ *
+ *         OR operation is to retain 1
+ * 
+ *         AND operation is to retain 0
+ * 
+ *         XOR operation is to detect difference
+ *
+ *
+ */
 public class BitOperation {
 
 	public static void main(String[] args) {

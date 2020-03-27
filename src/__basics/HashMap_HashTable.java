@@ -20,10 +20,6 @@ import java.util.Hashtable;
  */
 
 /**
- * HashMap��Hashtable��������ʵ��(���̰߳�ȫ)�����Ƕ������Map�ӿ� ;
- * ��������HashMap�����(null)��ֵ(key),���ڷ��̰߳�ȫ��Ч���ϸ���Hashtable
- * HashMap����null��Ϊһ��entry��key����value����Hashtable������
- * HashMap��Hashtable��contains����ȥ���ˣ��ĳ�containsvalue��containsKey����Ϊcontains�������������������
  * 
  * 
  * HashMap is an implementation of Map. A Map maps keys to values. The key look
