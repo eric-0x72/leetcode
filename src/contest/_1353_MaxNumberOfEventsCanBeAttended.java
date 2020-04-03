@@ -4,13 +4,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class Solution {
+class _1353_MaxNumberOfEventsCanBeAttended {
 
 	public static int maxEvents(int[][] events) {
-
 		int n = events.length;
 
-		Arrays.sort(events, new Comparator<int[]>() { // 按照开始的时间排序
+		Arrays.sort(events, new Comparator<int[]>() {
 			public int compare(int[] a, int[] b) {
 				return a[0] - b[0];
 			}
@@ -23,13 +22,13 @@ class Solution {
 
 		for (int day = 1; day <= 100000; day++) {
 
-			while (p < n && events[p][0] == day) { // 遍历所有的events，如果有开始时间等于day的，加入pq
+			while (p < n && events[p][0] == day) {
 				pq.add(events[p][1]);
 				p++;
 			}
 
 			while (!pq.isEmpty()) {
-				int end = pq.poll(); // 找出结束时间最小的，算作可以参加
+				int end = pq.poll();
 
 				if (end < day)
 					continue;
