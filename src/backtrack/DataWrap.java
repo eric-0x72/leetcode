@@ -1,4 +1,4 @@
-package backtrack_greedy;
+package backtrack;
 
 public class DataWrap {
 

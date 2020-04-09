@@ -1,4 +1,4 @@
-package DP;
+package dp;
 
 import java.util.Arrays;
 
@@ -58,7 +58,7 @@ public class __RodCutting {
 		dp[0] = 0; // ������0�����ӣ��۸���0
 
 		for (int i = 1; i <= n; i++)
-			for (int j = 1; j <= i; j++) // j����[1...i]�������
+			for (int j = 1; j <= i; j++) // j����[1...i]�������?
 				dp[i] = Math.max(dp[i], prices[j] + dp[i - j]);
 
 		return dp[n];

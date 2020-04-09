@@ -1,5 +1,5 @@
 
-package DP;
+package dp;
 
 public class _123_BestTimeToBuyAndSellStock3 {
 

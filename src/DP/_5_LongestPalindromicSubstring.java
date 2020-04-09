@@ -1,9 +1,9 @@
-package DP;
+package dp;
 
 public class _5_LongestPalindromicSubstring {
 
 	/**
-	 * solution from Huahua, youtube
+	 * solution learned from Huahua, on youtube
 	 * 
 	 */
 	public String longestPalindrome(String s) {
@@ -11,15 +11,13 @@ public class _5_LongestPalindromicSubstring {
 		int start = 0;
 
 		for (int i = 0; i < s.length(); i++) {
-
-			// first is for even length
-			// second is for odd length
+			// odd and even cases
 			int curLen = Math.max(getLength(s, i, i), getLength(s, i, i + 1));
 
 			if (curLen > len) {
 				len = curLen;
 
-				// here (curLen-1) considers the even/odd situations
+				// here (curLen-1) considers the even/odd cases
 				start = i - (curLen - 1) / 2;
 			}
 		}
@@ -28,14 +26,14 @@ public class _5_LongestPalindromicSubstring {
 
 	/**
 	 * expand around centre
-	 * 
 	 */
 	private int getLength(String s, int l, int r) {
+		// within range, and first char equals last
 		while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
-			l--; // move to left
-			r++; // move to right
+			l--; // l move to left
+			r++; // r move to right
 		}
-		return r - l - 1; // length not include l and r
+		return r - l - 1; // length not include l and r; (l, r)
 	}
 
 	public static void main(String[] args) {

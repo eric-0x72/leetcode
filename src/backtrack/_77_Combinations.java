@@ -1,4 +1,4 @@
-package backtrack_greedy;
+package backtrack;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -16,7 +16,7 @@ public class _77_Combinations {
 
 		LinkedList<Integer> c = new LinkedList<>();
 
-		backtrack(n, k, 1, c); // start = 1, ��ϴ�1 ��ʼ�㣡
+		backtrack(n, k, 1, c); // start = 1, ��ϴ�?1 ��ʼ�㣡
 
 		return res;
 	}
