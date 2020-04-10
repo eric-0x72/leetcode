@@ -20,24 +20,31 @@ public class _79_WordSearch {
 	}
 
 	private boolean search(char[][] board, String word, int index, int x, int y) {
-		if (index == word.length() - 1)
+
+		if (index == word.length() - 1) {
 			return board[x][y] == word.charAt(index);
+		}
 
 		if (board[x][y] != word.charAt(index)) {
 			return false;
-		} else {
-			visited[x][y] = true;
+		}
 
-			for (int i = 0; i < 4; i++) {
-				int newx = x + d[i][0];
-				int newy = y + d[i][1];
+		// set state, start recursion
+		visited[x][y] = true;
 
-				if (inArea(newx, newy) && !visited[newx][newy])
-					if (search(board, word, index + 1, newx, newy))
-						return true;
-			}
+		for (int i = 0; i < 4; i++) {
+			int newx = x + d[i][0];
+			int newy = y + d[i][1];
+
+			if (inArea(newx, newy) && !visited[newx][newy])
+				if (search(board, word, index + 1, newx, newy))
+					return true;
+
+			// restore state
 			visited[x][y] = false;
 		}
+
+		// if not return true after the recursion, then return false
 		return false;
 	}
 
