@@ -1,4 +1,4 @@
-package backtrack_greedy;
+package backtrack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class _17_LetterCombinationsOfPhoneNumber {
 		return res;
 	}
 
-	// s�б����˴�ʱ��digits[0 ... index-1]����õ���
+	// s�б����˴�ʱ��digits[0 ... index-1]����õ���?
 	// ��ε�����Ѱ��digits[index]ƥ�����ĸ�����digits[0...index]������s��
 	private static void backtrack(String digits, int index, String s) {
 
@@ -40,7 +40,7 @@ public class _17_LetterCombinationsOfPhoneNumber {
 			return;
 		}
 
-		Character c = digits.charAt(index); // c��Ҫ���������
+		Character c = digits.charAt(index); // c��Ҫ���������?
 		String letters = map[c - '0']; // letters��c��Ӧ����ĸ��
 
 		// ѭ������letters, �ݹ����helper��ÿ�ζ�����index+1�����ҰѴ�s������ε�letter

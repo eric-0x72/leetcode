@@ -1,4 +1,4 @@
-package DP;
+package dp;
 
 import java.util.Arrays;
 
@@ -37,8 +37,8 @@ public class _198_houseRobber {
 		if (n == 1)
 			return nums[0];
 
-		// ��ͷ��ʼ��� memo
-		// memo�������� [0,n) ���ӵõ����������
+		// ��ͷ��ʼ���? memo
+		// memo�������� [0,n) ���ӵõ����������?
 		int[] memo = new int[n];
 		memo[0] = nums[0];
 		memo[1] = Math.max(nums[0], nums[1]);
