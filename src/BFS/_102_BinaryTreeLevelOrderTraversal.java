@@ -1,4 +1,4 @@
-package BFS;
+package bfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -19,6 +19,7 @@ class TreeNode {
 public class _102_BinaryTreeLevelOrderTraversal {
 
 	public List<List<Integer>> levelOrder(TreeNode root) {
+
 		List<List<Integer>> res = new ArrayList<>();
 		if (root == null)
 			return res;
@@ -27,33 +28,26 @@ public class _102_BinaryTreeLevelOrderTraversal {
 		q.offer(root);
 
 		while (!q.isEmpty()) {
-			List<Integer> li = new ArrayList<>();
+			// to store current level
+			List<Integer> level = new ArrayList<>();
 
-			// go thru element in existing queue
-			int s = q.size(); // why must store s first???
-			
-			for (int i = 0; i < s; i++) {
+			int size = q.size();
+			for (int i = 0; i < size; i++) {
 				TreeNode cur = q.poll();
-				li.add(cur.val);
+				level.add(cur.val); // add to current level result
 
 				if (cur.left != null)
 					q.add(cur.left);
 				if (cur.right != null)
 					q.add(cur.right);
 			}
-			res.add(li);
+			// add level to res
+			res.add(level);
 		}
 		return res;
 	}
 
 	public static void main(String[] args) {
-		Queue<Integer> q = new LinkedList<>();
-		q.offer(12);
-		q.offer(8);
-		System.out.println(q.size());
-
-		q.poll();
-		System.out.println(q.size());
 
 	}
 

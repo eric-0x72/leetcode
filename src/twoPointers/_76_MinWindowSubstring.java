@@ -2,30 +2,56 @@ package twoPointers;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
 public class _76_MinWindowSubstring {
 
-	public String minWindow(String s, String target) {
-		Map<Character, Integer> map = new HashMap<>();
-		for (int i = 0; i < target.length(); i++) {
-			int count = map.getOrDefault(target.charAt(i), 0);
-			map.put(target.charAt(i), count + 1);
+	// leaving for now
+	public static String minWindow(String s, String target) {
+		int n = s.length();
+
+		HashSet<Character> set = new HashSet<>();
+		for (char c : target.toCharArray()) {
+			set.add(c);
 		}
 
-		int window = map.size();
+		int l = 0;
+		int r = 0;
+		String res = "";
+		int len = Integer.MAX_VALUE;
+		HashMap<Character, Integer> map = new HashMap<>();
 
-		int l = 0, r = 0;
-		
-		
-		
+		while (l <= n - 2 && r <= n - 2) {
+			String cur = s.substring(l, r);
+			boolean flag = true;
 
+			for (char c : set) {
+				if (cur.indexOf(c) == -1) {
+					flag = false;
+					break;
+				}
+			}
+
+			// if window contains target
+			if (flag) {
+				map.put(s.charAt(l), map.get(s.charAt(l)) - 1);
+				l++;
+			} else { // if current window not contain target
+				r++;
+				map.put(s.charAt(r), map.get(s.charAt(r)) + 1);
+			}
+
+			res = (l - r + 1 < len) ? cur : res;
+		}
+		return res;
 	}
 
 	public static void main(String[] args) {
-		List<Integer> a = Arrays.asList(1, 23);
-		System.out.println(a);
+		String S = "ADOBECODEBANC", T = "ABC";
+		String res = minWindow(S, T);
+		System.out.println(res);
 	}
 
 }

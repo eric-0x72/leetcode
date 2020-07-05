@@ -13,26 +13,28 @@ class TreeNode {
 
 public class _543_DiameterOfBinaryTree {
 
-	private int res;
+	private int res = 1;
 
 	public int diameterOfBinaryTree(TreeNode root) {
-		res = 1;
-
-		depth(root);
+		height(root);
 
 		return res - 1; // nodes-1 gives the edges
 	}
 
-	private int depth(TreeNode root) {
+	// return the height of root node
+	private int height(TreeNode root) {
 		if (root == null)
 			return 0;
 
-		int l = depth(root.left);
-		int r = depth(root.right);
+		// leaf node has height = 1
+		int l = height(root.left); // height of root.left
+		int r = height(root.right); // height of root.right
 
-		// add one for the current root, gives the number of nodes along the path
+		// max nodes along path from left and right subtree
+		// add 1 for root itself
 		res = Math.max(res, l + r + 1);
 
+		// height of root = max of children + itself
 		return Math.max(l, r) + 1;
 	}
 
