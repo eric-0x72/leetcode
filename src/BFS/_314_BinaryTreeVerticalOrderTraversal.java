@@ -29,6 +29,7 @@ public class _314_BinaryTreeVerticalOrderTraversal {
 		int min = 0;
 
 		while (!q.isEmpty()) {
+			// 314 test
 			TreeNode curnode = q.poll();
 			int curcol = columns.get(curnode); // get column number
 
