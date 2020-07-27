@@ -3,55 +3,73 @@ package twoPointers;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class _76_MinWindowSubstring {
 
 	// leaving for now
-	public static String minWindow(String s, String target) {
+	public static String minWindow(String s, String t) {
+		int l = 0, r = 0;
+		int resl = 0, resr = 0;
 		int n = s.length();
 
-		HashSet<Character> set = new HashSet<>();
-		for (char c : target.toCharArray()) {
-			set.add(c);
+		char[] chars = t.toCharArray();
+		Set<Character> targetSet = new HashSet<>();
+		for (char c : chars) {
+			targetSet.add(c);
 		}
 
-		int l = 0;
-		int r = 0;
-		String res = "";
-		int len = Integer.MAX_VALUE;
-		HashMap<Character, Integer> map = new HashMap<>();
+		Map<Character, Integer> curMap = new HashMap<>();
+		int res = Integer.MAX_VALUE;
 
-		while (l <= n - 2 && r <= n - 2) {
-			String cur = s.substring(l, r);
-			boolean flag = true;
+		while (r < n && l < n) {
+			boolean desirable = curMap.keySet().containsAll(targetSet);
 
-			for (char c : set) {
-				if (cur.indexOf(c) == -1) {
-					flag = false;
-					break;
-				}
-			}
+			char charR = s.charAt(r);
+			char charL = s.charAt(l);
+			System.out.println(charL + " " + charR);
 
-			// if window contains target
-			if (flag) {
-				map.put(s.charAt(l), map.get(s.charAt(l)) - 1);
-				l++;
-			} else { // if current window not contain target
+			// not desirable, move r to right
+			if (!desirable) {
+				curMap.put(charR, curMap.getOrDefault(charR, 0) + 1);
 				r++;
-				map.put(s.charAt(r), map.get(s.charAt(r)) + 1);
 			}
 
-			res = (l - r + 1 < len) ? cur : res;
+			// if desirable, move l to right
+			else {
+				// System.out.println(curMap);
+
+				if (r - l < res) {
+					res = r - l;
+
+					resl = l;
+					resr = r;
+				}
+
+				System.out.println(curMap + ", " + charL);
+				if (curMap.get(charL) <= 0) {
+					curMap.remove(charL);
+				} else {
+					curMap.put(charL, curMap.get(charL) - 1);
+				}
+				l++;
+			}
 		}
-		return res;
+		System.out.println("final: " + l + " " + r + ", gives: " + s.substring(resl, resr));
+		return s.substring(resl, resr);
 	}
 
 	public static void main(String[] args) {
-		String S = "ADOBECODEBANC", T = "ABC";
-		String res = minWindow(S, T);
+		String s = "ADOBECODEBANC", target = "ABC";
+		String res = minWindow(s, target);
 		System.out.println(res);
+		System.out.println("done.");
+//		Set<String> set1 = new HashSet<>(Arrays.asList("a", "b", "c"));
+//		Set<String> set2 = new HashSet<>(Arrays.asList("a", "b", "c" , "d"));
+//		System.out.println(set1);
+//		System.out.println(set2);
+//		System.out.println(set2.containsAll(set1));
 	}
 
 }
