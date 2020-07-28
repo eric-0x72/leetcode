@@ -17,7 +17,7 @@ public class _102_BinaryTreeLevelOrderTraversal {
 		q.offer(root);
 
 		while (!q.isEmpty()) {
-			List<Integer> level = new ArrayList<Integer>();
+			List<Integer> level = new ArrayList<>();
 			int sz = q.size();
 
 			for (int i = 0; i < sz; i++) {
