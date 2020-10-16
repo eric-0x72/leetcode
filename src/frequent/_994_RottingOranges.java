@@ -33,13 +33,13 @@ public class _994_RottingOranges {
 
 	private void bfs(int x, int y) {
 
-		for (int i = 0; i < 4; i++) {
-			int newx = x + d[i][0];
-			int newy = y + d[i][1];
-			
-			if(inArea(x, y ) && )
-
-		}
+//		for (int i = 0; i < 4; i++) {
+//			int newx = x + d[i][0];
+//			int newy = y + d[i][1];
+//
+//			if(inArea(x, y ) && )
+//
+//		}
 
 	}
 }

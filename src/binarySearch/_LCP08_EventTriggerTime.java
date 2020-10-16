@@ -15,7 +15,7 @@ public class _LCP08_EventTriggerTime {
 		while (l <= r) {
 			int mid = l + (r - l) / 2;
 			
-			if ()
+			// if ()
 				
 		}
 

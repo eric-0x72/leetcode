@@ -30,8 +30,7 @@ public class _38_Permutation {
 			
 			visited[ i ] = true ; 
 			
-			cur
-			
+
 		}
 
 	}

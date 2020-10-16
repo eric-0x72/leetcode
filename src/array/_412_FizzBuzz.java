@@ -1,11 +1,12 @@
 package array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class _412_FizzBuzz {
 
-	public List<String> fizzBuzz(int n) {
+	public static List<String> fizzBuzz(int n) {
 
 		List<String> res = new ArrayList<>();
 
@@ -22,6 +23,11 @@ public class _412_FizzBuzz {
 			}
 		}
 		return res;
+	}
+
+	public static void main(String[] args) {
+		List<String> res = fizzBuzz(12);
+		System.out.println(Arrays.toString(res));
 	}
 
 }

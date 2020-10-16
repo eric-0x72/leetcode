@@ -12,17 +12,17 @@ public class _743_NetworkDelayTime {
 	public int networkDelayTime(int[][] times, int N, int K) {
 
 		// from : [to, weight]
-		Map<Integer, List<int[]>> G = new HashMap<>();
+		Map<Integer, List<int[]>> g = new HashMap<>();
 
 		// for each node, add edge outgoing from this node
 		// edge contains other node and weight
 		for (int[] edge : times) {
 			// edge: [start, end, weight]
-			if (!G.containsKey(edge[0])) {
-				G.put(edge[0], new ArrayList<int[]>());
+			if (!g.containsKey(edge[0])) {
+				g.put(edge[0], new ArrayList<int[]>());
 			}
 			// add other node and weight
-			G.get(edge[0]).add(new int[] { edge[1], edge[2] });
+			g.get(edge[0]).add(new int[] { edge[1], edge[2] });
 		}
 
 		// pq, sort by dist to origin
@@ -37,21 +37,21 @@ public class _743_NetworkDelayTime {
 			// info is the shortest dist of them, thus cannot relax
 			// therefore its shortest dist is confirmed
 			int[] info = q.poll();
-			int d = info[0], node = info[1]; // distance, node
+			int d = info[0], u = info[1]; // distance, node
 
 			// if node's shortest dist is confirmed
-			if (map.containsKey(node))
+			if (map.containsKey(u))
 				continue;
 
-			map.put(node, d);
+			map.put(u, d); // add u to result map, shortest dist found
 
-			// do relaxation on node
-			if (G.containsKey(node)) { // if node has outgoing edges
-				// node->i
-				for (int[] i : G.get(node)) {
-					int nei = i[0], weight = i[1]; // toNode, weight
-					if (!map.containsKey(nei))
-						q.offer(new int[] { d + weight, nei });
+			// do relaxation on u's neighbours
+			if (g.containsKey(u)) { // if u has outgoing edges
+				// u -> v ; v is u's neighbour
+				for (int[] v : g.get(u)) {
+					int vid = v[0], weight = v[1]; // v node, weight
+					if (!map.containsKey(vid))
+						q.offer(new int[] { d + weight, vid });
 				}
 			}
 		} // end while

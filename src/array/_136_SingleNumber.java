@@ -10,9 +10,6 @@ public class _136_SingleNumber {
 	 * a xor 0 = a, retains the original number
 	 * 
 	 * a xor a = 0, this makes even appearance cancel out
-	 * 
-	 * 
-	 * 
 	 */
 	public int singleNumber_1(int[] nums) {
 		int res = 0;
@@ -24,7 +21,6 @@ public class _136_SingleNumber {
 
 	/**
 	 * hash map
-	 * 
 	 */
 	public int singleNumber_2(int[] nums) {
 		HashMap<Integer, Integer> map = new HashMap<>();
