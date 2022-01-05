@@ -13,7 +13,7 @@ public class _276_PaintFence {
 // learned from 
 // https://leetcode.com/problems/paint-fence/discuss/178010/The-only-solution-you-need-to-read
 	public int numWays(int n, int k) {
-		
+		return 0 ;
 	}
 
 }

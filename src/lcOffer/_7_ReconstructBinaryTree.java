@@ -2,8 +2,6 @@ package lcOffer;
 
 import java.util.HashMap;
 
-import heap.heap;
-
 /**
  * @author weibang
  * 

@@ -11,7 +11,7 @@ public class _221_MaximalSquare {
 			for (int j = 0; j < cols; j++) {
 
 			}
-
+		return 0;
 	}
 
 }

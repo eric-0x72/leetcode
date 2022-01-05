@@ -1,4 +1,7 @@
+/AprilChallenge/
+/BFS/
 /BinarySearch.class
+/DP/
 /ListNode.class
 /ProduceExceptSelf.class
 /TreeNode.class
@@ -13,11 +16,13 @@
 /_111_MinDepthOfBinaryTree.class
 /_112_PathSum.class
 /_1130_MinimumCostTreeFromLeafValues.class
+/_11_MaxArea.class
 /_1245_TreeDiameter.class
 /_124_BinaryTreeMaxPathSum.class
 /_136_SingleNumber.class
 /_138_CopyListWithRandomPointer$Node.class
 /_138_CopyListWithRandomPointer.class
+/_139_WordBreak.class
 /_144_BinaryTreePreorderTraversal.class
 /_14_LongestCommonPrefix.class
 /_155_MinStack.class

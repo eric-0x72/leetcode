@@ -3,8 +3,6 @@ package lcOffer;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import jdk.tools.jimage.resources.jimage;
-
 public class _56b_SingleNumber {
 
 	public int singleNumber(int[] nums) {

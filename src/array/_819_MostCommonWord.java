@@ -7,7 +7,7 @@ public class _819_MostCommonWord {
 				.toLowerCase()
 				.split("\\s+");
 		
-		
+		return null;
 	}
 
 }

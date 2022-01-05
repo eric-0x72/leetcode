@@ -1,62 +1,60 @@
 package graph_bobo;
 
 /**
- * @author zwb
- *
  * @param weight : weight extends Number&Comparable, implements Comparable
  *               interface
- * 
+ *               <p>
  *               extends parent class, implements interface
- * 
+ * @author zwb
  */
 
 public class Edge<Weight extends Number & Comparable> implements Comparable<Edge<Weight>> {
 
-	private int a, b; // ±ßµÄÁ½¸ö¶Ëµã
-	private Weight weight; // ±ßµÄÈ¨Öµ
+    private int a, b; // ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
+    private Weight weight; // ï¿½ßµï¿½È¨Öµ
 
-	public Edge(int a, int b, Weight weight) {
-		this.a = a;
-		this.b = b;
-		this.weight = weight;
-	}
+    public Edge(int a, int b, Weight weight) {
+        this.a = a;
+        this.b = b;
+        this.weight = weight;
+    }
 
-	public Edge(Edge<Weight> e) {
-		this.a = e.a;
-		this.b = e.b;
-		this.weight = e.weight;
-	}
+    public Edge(Edge<Weight> e) {
+        this.a = e.a;
+        this.b = e.b;
+        this.weight = e.weight;
+    }
 
-	public int v() {
-		return a;
-	} // ·µ»ØµÚÒ»¸ö¶¥µã
+    public int v() {
+        return a;
+    } // ï¿½ï¿½ï¿½Øµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	public int w() {
-		return b;
-	} // ·µ»ØµÚ¶þ¸ö¶¥µã
+    public int w() {
+        return b;
+    } // ï¿½ï¿½ï¿½ØµÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	public Weight wt() {
-		return weight;
-	} // ·µ»ØÈ¨Öµ
+    public Weight wt() {
+        return weight;
+    } // ï¿½ï¿½ï¿½ï¿½È¨Öµ
 
-	// ¸ø¶¨Ò»¸ö¶¥µã, ·µ»ØÁíÒ»¸ö¶¥µã
-	public int other(int x) {
-		assert x == a || x == b;
-		return x == a ? b : a;
-	}
+    // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public int other(int x) {
+        assert x == a || x == b;
+        return x == a ? b : a;
+    }
 
-	// Êä³ö±ßµÄÐÅÏ¢
-	public String toString() {
-		return "" + a + "-" + b + ": " + weight;
-	}
+    // ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½Ï¢
+    public String toString() {
+        return "" + a + "-" + b + ": " + weight;
+    }
 
-	// ±ßÖ®¼äµÄ±È½Ï
-	public int compareTo(Edge<Weight> that) {
-		if (weight.compareTo(that.wt()) < 0)
-			return -1;
-		else if (weight.compareTo(that.wt()) > 0)
-			return +1;
-		else
-			return 0;
-	}
+    // ï¿½ï¿½Ö®ï¿½ï¿½Ä±È½ï¿½
+    public int compareTo(Edge<Weight> that) {
+        if (weight.compareTo(that.wt()) < 0)
+            return -1;
+        else if (weight.compareTo(that.wt()) > 0)
+            return +1;
+        else
+            return 0;
+    }
 }

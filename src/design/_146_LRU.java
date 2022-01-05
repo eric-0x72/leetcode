@@ -23,6 +23,9 @@ public class _146_LRU {
     }
 
     private void removeNode(Node node) {
+        // 移除node节点
+        // prev - cur - next
+        // pre.next = next , next.pre = pre
         Node prev = node.prev;
         Node next = node.next;
 
@@ -76,6 +79,7 @@ public class _146_LRU {
         Node node = cache.get(key);
 
         // if node not exist
+        //
         if (node == null) {
             Node newnode = new Node();
             newnode.key = key;
@@ -87,6 +91,7 @@ public class _146_LRU {
 
             size++;
 
+            // check if oversize
             if (size > capacity) {
                 Node tail = popTail();
                 cache.remove(tail.key); // remove using key

@@ -7,6 +7,7 @@ public class _487_MaxConsecutiveOnes2 {
 		for (int i = 0; i < nums.length; i++) {
 			
 		}
+		return 0;
 	}
 
 }

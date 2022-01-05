@@ -19,6 +19,6 @@ public class _394_DecodeString {
 			
 		}
 		
-		
+		return null;
 	}
 }

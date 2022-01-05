@@ -19,6 +19,6 @@ public class _142_LinkedlistCycle2 {
 	}
 
 	public ListNode detectCycle_tortoise(ListNode head) {
-		
+		return null;
 	}
 }
